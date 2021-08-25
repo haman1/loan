@@ -25,3 +25,22 @@ h1 {
   margin-top: 2rem;
   font-weight: bold;
 }
+
+.container {
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  min-height: 80vh;
+}
+
+form {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  text-align: center;
+  font-size: 2rem;
+}
