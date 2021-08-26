@@ -44,3 +44,7 @@ form label {
   text-align: center;
   font-size: 2rem;
 }
+
+input[type=submit]:disabled {
+  opacity: .5;
+}

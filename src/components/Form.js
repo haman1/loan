@@ -15,11 +15,20 @@ class Form extends Component {
 
       //set state
       this.setState({
-          [name] : value})
+          [name] : Number(value)
+        })
 
 
     }
+    validateForm = () => {
+            //destructuring
+            const {amount, term} = this.state;
 
+            const notValid = !amount || !term
+           return notValid;
+
+
+    }
     render() {
         //extract content from state
         const {amount} = this.state;
@@ -50,7 +59,11 @@ class Form extends Component {
                     </select>
                 </div>
                 <div>
-                    <input type="submit" value="Calculate" className="u-full-width button-primary" />
+                    <input 
+                            disabled={ this.validateForm() }
+                            type="submit" 
+                            value="Calculate" 
+                            className="u-full-width button-primary" />
                 </div>
             </form>
          );
