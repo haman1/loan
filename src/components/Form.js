@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
-    state = { }
+    state = { 
+        amount:'',
+        term:''
 
-    handleChange = () => {
-        console.log('from validate form')
+    }
+
+    handleChange = (e) => {
+        
+        const {name, value} = e.target;
+
+        //console.log(name);
+
+      //set state
+      this.setState({
+          [name] : value})
+
 
     }
 
     render() {
+        //extract content from state
+        const {amount} = this.state;
         return (
             <form>
                 <div className="row">
@@ -26,7 +40,7 @@ class Form extends Component {
                     <label>Months to Repay</label>
                     <select 
                             onChange={this.handleChange}
-                            name="months" 
+                            name="term" 
                             className="u-full-height">
                                 <option value="">Select</option>
                                 <option value="3">3 Months</option>
